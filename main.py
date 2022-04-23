@@ -21,7 +21,7 @@ def main():
                 run = False
                 quit()
 
-        new_Game.create_grid()
+        new_Game.draw_grid()
 
         pygame.display.update()
         clock.tick(FPS)
