@@ -1,6 +1,7 @@
 import pygame
 from Ressources.variables import *
 from Ressources.game import Game
+import time
 pygame.init()
 
 
@@ -22,6 +23,7 @@ def main():
                 quit()
 
         new_Game.draw_grid()
+        time.sleep(0.5)
 
         pygame.display.update()
         clock.tick(FPS)
