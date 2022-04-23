@@ -9,17 +9,17 @@ class Game():
         self.h = self.display_surface.get_height()
         self.n_rows = n_rows
         self.n_cols = n_cols
-        self.rows = self.display_surface.get_height()//self.n_rows
-        self.cols = self.display_surface.get_width()//self.n_cols
+        self.rows = (self.display_surface.get_height()//self.n_rows) + 1 #+1 if self.n_rows is not a multiple of the height
+        self.cols = (self.display_surface.get_width()//self.n_cols) + 1
 
 
     def create_grid(self):
         self.display_surface.fill(White)
-        for row in range(self.n_rows+1):
-            if row == self.n_rows:
-
-                print(self.rows/self.n_rows,row, self.rows,self.rows*row)
+        for row in range(self.n_rows):
             pygame.draw.line(self.display_surface, Black, (0,row*self.rows), (self.w, row*self.rows))
 
         for col in range(self.n_cols):
             pygame.draw.line(self.display_surface, Black, (col*self.cols,0), (col*self.cols,self.h))
+
+
+        
