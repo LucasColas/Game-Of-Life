@@ -1,8 +1,8 @@
 import pygame
-
+from Ressources.variables import Width, Height
 pygame.init()
 
-Width, Height = 1500, 700
+
 Win = pygame.display.set_mode((Width, Height))
 
 clock = pygame.time.Clock()
