@@ -15,7 +15,10 @@ class Game():
 
     def create_grid(self):
         self.display_surface.fill(White)
-        for row in range(self.n_rows):
+        for row in range(self.n_rows+1):
+            if row == self.n_rows:
+
+                print(self.rows/self.n_rows,row, self.rows,self.rows*row)
             pygame.draw.line(self.display_surface, Black, (0,row*self.rows), (self.w, row*self.rows))
 
         for col in range(self.n_cols):

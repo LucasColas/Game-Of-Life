@@ -1,5 +1,5 @@
 import pygame
-from Ressources.variables import Width, Height
+from Ressources.variables import *
 from Ressources.game import Game
 pygame.init()
 
@@ -12,7 +12,7 @@ def main():
 
     run = True
     FPS = 60
-    new_Game = Game()
+    new_Game = Game(n_rows,n_cols)
 
     while run:
 
