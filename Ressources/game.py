@@ -15,3 +15,6 @@ class Game():
         self.display_surface.fill(White)
         for row in range(20):
             pygame.draw.line(self.display_surface, Black, (0,row*self.rows), (self.w, row*self.rows))
+
+        for col in range(20):
+            pygame.draw.line(self.display_surface, Black, (col*self.cols,0), (col*self.cols,self.h))
