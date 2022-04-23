@@ -27,3 +27,7 @@ class Game():
                 if grid[row][col] == 1:
                     Rect = pygame.Rect(col*self.cols, row*self.rows, self.rows, self.cols)
                     pygame.draw.rect(self.display_surface, Black, Rect)
+
+
+    def update_grid(self):
+        pass
