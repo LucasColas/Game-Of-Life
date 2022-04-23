@@ -1,5 +1,6 @@
 import pygame
 from Ressources.variables import Width, Height
+from Ressources.game import Game
 pygame.init()
 
 
@@ -11,11 +12,17 @@ def main():
 
     run = True
     FPS = 60
+    new_Game = Game()
 
     while run:
-        clock.tick(FPS)
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
                 quit()
+
+        new_Game.create_grid()
+
+        pygame.display.update()
+        clock.tick(FPS)
 main()
