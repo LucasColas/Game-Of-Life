@@ -58,4 +58,4 @@ class Game():
                     board[r][c] = 0
                 elif board[r][c] in [2,3]:
                     board[r][c] = 1
-        time.sleep(1)
+        time.sleep(0.4)
