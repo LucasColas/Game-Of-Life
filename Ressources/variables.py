@@ -13,3 +13,9 @@ grid = [[0 for i in range(n_rows)] for j in range(n_cols)]
 
 grid[1][0] = 1
 grid[41][40] = 1
+
+grid[0][1] = 1
+grid[1][2] = 1
+grid[2][0] = 1
+grid[2][1] = 1
+grid[2][1] = 1
