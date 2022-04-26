@@ -1,6 +1,8 @@
 import pygame
-pygame.init()
+import time
 from .variables import Black,White
+
+pygame.init()
 
 class Game():
     def __init__(self, n_rows, n_cols):
@@ -56,3 +58,5 @@ class Game():
                     board[r][c] = 0
                 elif board[r][c] in [2,3]:
                     board[r][c] = 1
+
+        time.sleep(1)

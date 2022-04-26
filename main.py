@@ -23,7 +23,7 @@ def main():
                 quit()
 
         new_Game.draw_grid(grid)
-        time.sleep(2)
+        #time.sleep(1)
         new_Game.update_grid(grid)
 
         pygame.display.update()
