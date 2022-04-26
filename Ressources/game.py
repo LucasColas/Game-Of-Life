@@ -24,10 +24,33 @@ class Game():
 
         for row in range(len(grid)):
             for col in range(len(grid[row])):
-                if grid[row][col] == 1:
+                if grid[row][col]:
                     Rect = pygame.Rect(col*self.cols, row*self.rows, self.rows, self.cols)
                     pygame.draw.rect(self.display_surface, Black, Rect)
 
 
-    def update_grid(self):
-        pass
+    def update_grid(self, board):
+        def countNeighbors(r,c):
+            nei = 0
+            for i in range(r-1, r+2):
+                for j in range(c-1, c+2):
+                    if ((i == r and j ==c ) or i < 0 or j < 0 or i == self.n_rows or j == self.n_cols):
+                        continue
+                    if board[i][j]
+
+            return nei
+
+        for r in range(self.n_rows):
+            for c in range(self.n_cols):
+                nei = countNeighbors(r,c)
+                if board[r][c]:
+                    if nei in [2,3]:
+                        board[r][c] = 3
+                elif nei == 3:
+                    board[r][c] = 2
+        for r in range(self.n_rows):
+            for c in range(self.n_cols):
+                if board[r][c] == 1:
+                    board[r][c] = 0
+                elif board[r][c] in [2,3]:
+                    board[r][c] = 1
