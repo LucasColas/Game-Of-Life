@@ -1,6 +1,6 @@
 import pygame
 pygame.init()
-from .variables import Black,White, grid
+from .variables import Black,White
 
 class Game():
     def __init__(self, n_rows, n_cols):
@@ -13,7 +13,7 @@ class Game():
         self.cols = (self.display_surface.get_width()//self.n_cols)
 
 
-    def draw_grid(self):
+    def draw_grid(self, grid):
         self.display_surface.fill(White)
         for row in range(self.n_rows):
             pygame.draw.line(self.display_surface, Black, (0,row*self.rows), (self.w, row*self.rows))
