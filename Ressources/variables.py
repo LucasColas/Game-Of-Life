@@ -1,5 +1,4 @@
 
-
 Width, Height = 700, 700
 
 White = (255,255,255)
