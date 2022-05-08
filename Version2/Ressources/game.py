@@ -17,8 +17,17 @@ class Game():
 
     def create_cell(self, type):
         if type:
-            if self.n_rows
-            return
+            if self.n_rows%self.h != 0:
+                return (self.display_surface.get_height()//self.n_rows)+1
+            else:
+                return (self.display_surface.get_height()//self.n_rows)
+
+        else:
+            if self.n_cols%self.w != 0:
+                return (self.display_surface.get_width()//self.n_cols)+1
+            else:
+                return (self.display_surface.get_width()//self.n_cols)
+
 
     def create_grid(self, n_rows, n_cols):
         return [[0 for i in range(n_rows)] for j in range(n_cols)]
