@@ -13,8 +13,12 @@ class Game():
         self.n_cols = n_cols
         self.rows = (self.display_surface.get_height()//self.n_rows) #+1 if self.n_rows is not a multiple of the height
         self.cols = (self.display_surface.get_width()//self.n_cols)
+        self.grid = self.create_grid(self.n_rows, self.n_cols)
 
 
+    def create_grid(self, n_rows, n_cols):
+        return [[0 for i in range(n_rows)] for j in range(n_cols)]
+        
     def draw_grid(self, grid):
         self.display_surface.fill(White)
         for row in range(self.n_rows):

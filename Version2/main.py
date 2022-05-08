@@ -19,6 +19,7 @@ def main():
     row = ''
     col = ''
     col_entered = False
+
     while run:
         #print(nb)
         Win.fill(White)
@@ -66,7 +67,7 @@ def main():
                         #print(event.unicode, type(event.unicode))
                         if event.unicode >= '0' and event.unicode <= '9':
                             col += event.unicode
-                            print(row)
+                            print(col)
             #nb = int(nb)
             pygame.draw.rect(Win, (0,250,0), input_rect, 2)
             text = font.render(col, True, (Black))
@@ -87,4 +88,5 @@ def main():
 
         pygame.display.update()
         clock.tick(FPS)
+
 main()
