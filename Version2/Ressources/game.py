@@ -15,6 +15,10 @@ class Game():
         self.cols = (self.display_surface.get_width()//self.n_cols)
         self.grid = self.create_grid(self.n_rows, self.n_cols)
 
+    def create_cell(self, type):
+        if type:
+            if self.n_rows
+            return
 
     def create_grid(self, n_rows, n_cols):
         return [[0 for i in range(n_rows)] for j in range(n_cols)]
@@ -27,7 +31,6 @@ class Game():
         for col in range(self.n_cols):
             pygame.draw.line(self.display_surface, Black, (col*self.cols,0), (col*self.cols,self.h))
 
-
         for row in range(len(self.grid)):
             for col in range(len(self.grid[row])):
                 if self.grid[row][col]:
@@ -35,7 +38,7 @@ class Game():
                     pygame.draw.rect(self.display_surface, Black, Rect)
 
 
-    def update_grid(self, self.grid):
+    def update_grid(self):
         def countNeighbors(r,c):
             nei = 0
             for i in range(r-1, r+2):

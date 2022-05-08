@@ -87,9 +87,9 @@ def main():
                     run = False
                     quit()
 
-            new_Game.draw_grid(grid)
+            new_Game.draw_grid()
             #time.sleep(1)
-            new_Game.update_grid(grid)
+            new_Game.update_grid()
 
         pygame.display.update()
         clock.tick(FPS)
