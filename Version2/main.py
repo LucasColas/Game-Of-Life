@@ -21,7 +21,7 @@ def main():
         #print(nb)
         if not nb_entered:
             Win.fill(White)
-            print(nb)
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     run = False
@@ -30,14 +30,15 @@ def main():
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_BACKSPACE:
                         nb = nb[:-1]
+                        print(nb)
 
                     elif event.key in (pygame.K_RETURN, pygame.K_KP_ENTER):
                         nb_entered = True
                     else:
-                        print(event.unicode, type(event.unicode))
-
+                        #print(event.unicode, type(event.unicode))
                         if event.unicode >= '0' and event.unicode <= '9':
                             nb += event.unicode
+                            print(nb)
 
         else:
             for event in pygame.event.get():
