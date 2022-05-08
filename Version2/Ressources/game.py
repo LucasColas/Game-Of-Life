@@ -11,22 +11,22 @@ class Game():
         self.h = self.display_surface.get_height()
         self.n_rows = n_rows
         self.n_cols = n_cols
-        self.rows = (self.display_surface.get_height()//self.n_rows) #+1 if self.n_rows is not a multiple of the height
-        self.cols = (self.display_surface.get_width()//self.n_cols)
+        self.rows = self.create_cells(1) #+1 if self.n_rows is not a multiple of the height
+        self.cols = self.create_cell(0)
         self.grid = self.create_grid(self.n_rows, self.n_cols)
 
     def create_cell(self, type):
         if type:
             if self.n_rows%self.h != 0:
-                return (self.display_surface.get_height()//self.n_rows)+1
+                return (self.h//self.n_rows)+1
             else:
-                return (self.display_surface.get_height()//self.n_rows)
+                return (self.h//self.n_rows)
 
         else:
             if self.n_cols%self.w != 0:
-                return (self.display_surface.get_width()//self.n_cols)+1
+                return (self.w//self.n_cols)+1
             else:
-                return (self.display_surface.get_width()//self.n_cols)
+                return (self.w//self.n_cols)
 
 
     def create_grid(self, n_rows, n_cols):
