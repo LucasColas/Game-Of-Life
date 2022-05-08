@@ -15,7 +15,8 @@ class Game():
         self.col = self.create_cell(0)
         self.grid = self.create_grid(self.n_rows, self.n_cols)
         self.default_grid = self.default_grid()
-        print(self.grid)
+
+        #print(self.grid)
     def create_cell(self, type):
         if type:
             if self.n_rows%self.h != 0:
@@ -88,24 +89,36 @@ class Game():
             nei = 0
             for i in range(r-1, r+2):
                 for j in range(c-1, c+2):
-                    if ((i == r and j == c) or i < 0 or j < 0 or i == self.n_rows or j == self.n_cols):
+
+                    if ((i == r and j == c) or i < 0 or j < 0 or
+                        i == len(self.grid) or j == len(self.grid[0])):
                         continue
+
                     if self.grid[i][j] in [1,3]:
                         nei += 1
 
+            #print("nei : ", nei)
             return nei
 
         for r in range(self.n_rows):
+
             for c in range(self.n_cols):
                 nei = countNeighbors(r,c)
                 if self.grid[r][c]:
                     if nei in [2,3]:
+                        print("self grid ",self.grid[r][c])
                         self.grid[r][c] = 3
+                        print("self grid : ", self.grid[r][c])
                 elif nei == 3:
+                    print("self grid",self.grid[r][r])
                     self.grid[r][c] = 2
+                    print("self grid : ",self.grid[r][r])
 
+        #print(self.grid)
         for r in range(self.n_rows):
+
             for c in range(self.n_cols):
+
                 if self.grid[r][c] == 1:
                     self.grid[r][c] = 0
                 elif self.grid[r][c] in [2,3]:
