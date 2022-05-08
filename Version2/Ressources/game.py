@@ -18,8 +18,8 @@ class Game():
 
     def create_grid(self, n_rows, n_cols):
         return [[0 for i in range(n_rows)] for j in range(n_cols)]
-        
-    def draw_grid(self, grid):
+
+    def draw_grid(self):
         self.display_surface.fill(White)
         for row in range(self.n_rows):
             pygame.draw.line(self.display_surface, Black, (0,row*self.rows), (self.w, row*self.rows))
@@ -28,21 +28,21 @@ class Game():
             pygame.draw.line(self.display_surface, Black, (col*self.cols,0), (col*self.cols,self.h))
 
 
-        for row in range(len(grid)):
-            for col in range(len(grid[row])):
-                if grid[row][col]:
+        for row in range(len(self.grid)):
+            for col in range(len(self.grid[row])):
+                if self.grid[row][col]:
                     Rect = pygame.Rect(col*self.cols, row*self.rows, self.rows, self.cols)
                     pygame.draw.rect(self.display_surface, Black, Rect)
 
 
-    def update_grid(self, board):
+    def update_grid(self, self.grid):
         def countNeighbors(r,c):
             nei = 0
             for i in range(r-1, r+2):
                 for j in range(c-1, c+2):
                     if ((i == r and j == c) or i < 0 or j < 0 or i == self.n_rows or j == self.n_cols):
                         continue
-                    if board[i][j] in [1,3]:
+                    if self.grid[i][j] in [1,3]:
                         nei += 1
 
             return nei
@@ -50,16 +50,16 @@ class Game():
         for r in range(self.n_rows):
             for c in range(self.n_cols):
                 nei = countNeighbors(r,c)
-                if board[r][c]:
+                if self.grid[r][c]:
                     if nei in [2,3]:
                         board[r][c] = 3
                 elif nei == 3:
-                    board[r][c] = 2
+                    self.grid[r][c] = 2
 
         for r in range(self.n_rows):
             for c in range(self.n_cols):
-                if board[r][c] == 1:
-                    board[r][c] = 0
-                elif board[r][c] in [2,3]:
-                    board[r][c] = 1
+                if self.grid[r][c] == 1:
+                    self.grid[r][c] = 0
+                elif self.grid[r][c] in [2,3]:
+                    self.grid[r][c] = 1
         time.sleep(0.4)
