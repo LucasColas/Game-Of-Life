@@ -11,8 +11,8 @@ class Game():
         self.h = self.display_surface.get_height()
         self.n_rows = n_rows
         self.n_cols = n_cols
-        self.rows = self.create_cells(1) #+1 if self.n_rows is not a multiple of the height
-        self.cols = self.create_cell(0)
+        self.row = self.create_cell(1) #+1 if self.n_rows is not a multiple of the height
+        self.col = self.create_cell(0)
         self.grid = self.create_grid(self.n_rows, self.n_cols)
 
     def create_cell(self, type):
@@ -35,15 +35,15 @@ class Game():
     def draw_grid(self):
         self.display_surface.fill(White)
         for row in range(self.n_rows):
-            pygame.draw.line(self.display_surface, Black, (0,row*self.rows), (self.w, row*self.rows))
+            pygame.draw.line(self.display_surface, Black, (0,row*self.row), (self.w, row*self.row))
 
         for col in range(self.n_cols):
-            pygame.draw.line(self.display_surface, Black, (col*self.cols,0), (col*self.cols,self.h))
+            pygame.draw.line(self.display_surface, Black, (col*self.col,0), (col*self.col,self.h))
 
         for row in range(len(self.grid)):
             for col in range(len(self.grid[row])):
                 if self.grid[row][col]:
-                    Rect = pygame.Rect(col*self.cols, row*self.rows, self.rows, self.cols)
+                    Rect = pygame.Rect(col*self.col, row*self.row, self.row, self.col)
                     pygame.draw.rect(self.display_surface, Black, Rect)
 
 
