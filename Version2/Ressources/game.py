@@ -11,7 +11,7 @@ class Game():
         self.h = self.display_surface.get_height()
         self.n_rows = n_rows
         self.n_cols = n_cols
-        self.row = self.create_cell(1) #+1 if self.n_rows is not a multiple of the height
+        self.row = self.create_cell(1)
         self.col = self.create_cell(0)
         self.grid = self.create_grid(self.n_rows, self.n_cols)
         self.default_grid = self.default_grid()
@@ -19,7 +19,7 @@ class Game():
     def create_cell(self, type):
         if type:
             if self.n_rows%self.h != 0:
-                return (self.h//self.n_rows)+1
+                return (self.h//self.n_rows)+1  #+1 if self.n_rows is not a multiple of the height
             else:
                 return (self.h//self.n_rows)
 
@@ -32,7 +32,6 @@ class Game():
 
     def create_grid(self, n_rows, n_cols):
         return [[0 for i in range(n_rows)] for j in range(n_cols)]
-
     def default_grid(self):
         """
         self.grid[30][30] = 1
@@ -84,6 +83,7 @@ class Game():
 
 
     def update_grid(self):
+        #print("in update")
         def countNeighbors(r,c):
             nei = 0
             for i in range(r-1, r+2):
