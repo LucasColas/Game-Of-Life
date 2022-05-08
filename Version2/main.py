@@ -4,9 +4,10 @@ from Ressources.game import Game
 import time
 pygame.init()
 
-
+pygame.display.set_caption('Game Of Life')
 Win = pygame.display.set_mode((Width, Height))
-input_rect = pygame.Rect(200, 200, 140, 32)
+input_rect = pygame.Rect((Width//2)-75, (Height//2)-16, 140, 32)
+font = pygame.font.Font(None, 32)
 clock = pygame.time.Clock()
 
 def main():
@@ -39,8 +40,11 @@ def main():
                         if event.unicode >= '0' and event.unicode <= '9':
                             nb += event.unicode
                             print(nb)
-
+            #nb = int(nb)
             pygame.draw.rect(Win, (0,250,0), input_rect, 2)
+            text = font.render(nb, True, (Black))
+            Win.blit(text, (input_rect.x + 5, input_rect.y+5))
+
         else:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
