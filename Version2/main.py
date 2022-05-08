@@ -86,7 +86,7 @@ def main():
                 if event.type == pygame.QUIT:
                     run = False
                     quit()
-
+            print("Test")
             new_Game.draw_grid()
             #time.sleep(1)
             new_Game.update_grid()
