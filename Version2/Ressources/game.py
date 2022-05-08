@@ -14,7 +14,7 @@ class Game():
         self.row = self.create_cell(1) #+1 if self.n_rows is not a multiple of the height
         self.col = self.create_cell(0)
         self.grid = self.create_grid(self.n_rows, self.n_cols)
-
+        self.default_grid = self.default_grid()
     def create_cell(self, type):
         if type:
             if self.n_rows%self.h != 0:
@@ -32,6 +32,18 @@ class Game():
     def create_grid(self, n_rows, n_cols):
         return [[0 for i in range(n_rows)] for j in range(n_cols)]
 
+    def default_grid():
+        self.grid[30][30] = 1
+        self.grid[30][36] = 1
+        self.grid[31][32] = 1
+        self.grid[32][32] = 1
+
+        self.grid[33][31] = 1
+        self.grid[33][33] = 1
+
+        self.grid[31][36] = 1
+        self.grid[32][35] = 1
+        self.grid[32][37] = 1
     def draw_grid(self):
         self.display_surface.fill(White)
         for row in range(self.n_rows):
