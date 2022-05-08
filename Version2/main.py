@@ -6,7 +6,7 @@ pygame.init()
 
 
 Win = pygame.display.set_mode((Width, Height))
-
+input_rect = pygame.Rect(200, 200, 140, 32)
 clock = pygame.time.Clock()
 
 def main():
@@ -40,6 +40,7 @@ def main():
                             nb += event.unicode
                             print(nb)
 
+            pygame.draw.rect(Win, (0,250,0), input_rect, 2)
         else:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
