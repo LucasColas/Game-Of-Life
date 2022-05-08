@@ -16,8 +16,8 @@ def main():
     FPS = 60
     new_Game = Game(n_rows,n_cols)
     nb_entered = False
-    nb = ''
-
+    row = ''
+    col = ''
     while run:
         #print(nb)
         if not nb_entered:
@@ -30,19 +30,21 @@ def main():
 
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_BACKSPACE:
-                        nb = nb[:-1]
-                        print(nb)
+                        row = row[:-1]
+                        print(row)
 
                     elif event.key in (pygame.K_RETURN, pygame.K_KP_ENTER):
                         nb_entered = True
                     else:
                         #print(event.unicode, type(event.unicode))
                         if event.unicode >= '0' and event.unicode <= '9':
-                            nb += event.unicode
-                            print(nb)
+                            row += event.unicode
+                            print(row)
             #nb = int(nb)
             pygame.draw.rect(Win, (0,250,0), input_rect, 2)
-            text = font.render(nb, True, (Black))
+            text = font.render(row, True, (Black))
+            text2 = font.render("Row : ", True, (Black))
+            Win.blit(text2, (input_rect.x, input_rect.y - (font.size("Col : ")[1] + 7)))
             Win.blit(text, (input_rect.x + 5, input_rect.y+5))
 
         else:
