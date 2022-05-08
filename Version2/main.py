@@ -19,12 +19,12 @@ def main():
 
     while run:
 
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                run = False
-                quit()
-
-            if not nb_entered:
+        if not nb_entered:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    run = False
+                    quit()
+                    
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_BACKSPACE:
                         nb = nb[:-1]
@@ -33,6 +33,13 @@ def main():
                         nb_entered = True
                     else:
                         nb += event.unicode
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+                quit()
+
+
 
 
 
