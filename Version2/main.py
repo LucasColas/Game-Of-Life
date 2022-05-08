@@ -14,11 +14,12 @@ def main():
 
     run = True
     FPS = 60
-    new_Game = Game(n_rows,n_cols)
+
     row_entered = False
     row = ''
     col = ''
     col_entered = False
+    created = False
 
     while run:
         #print(nb)
@@ -77,6 +78,10 @@ def main():
 
 
         else:
+            if not created:
+                new_Game = Game(row,col)
+                created = False
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     run = False
