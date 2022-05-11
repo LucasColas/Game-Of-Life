@@ -80,16 +80,16 @@ def main():
         else:
             if not created:
                 new_Game = Game(int(n_rows),int(n_cols))
-                created = False
+                created = True
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     run = False
                     quit()
-            print("Test")
+
             new_Game.draw_grid()
-            #time.sleep(1)
             new_Game.update_grid()
+
 
         pygame.display.update()
         clock.tick(FPS)

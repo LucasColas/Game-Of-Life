@@ -14,7 +14,7 @@ class Game():
         self.row = self.create_cell(1)
         self.col = self.create_cell(0)
         self.grid = self.create_grid(self.n_rows, self.n_cols)
-        self.default_grid = self.default_grid()
+        self.default_grid()
 
         #print(self.grid)
     def create_cell(self, type):
@@ -106,13 +106,13 @@ class Game():
                 nei = countNeighbors(r,c)
                 if self.grid[r][c]:
                     if nei in [2,3]:
-                        print("self grid ",self.grid[r][c])
+                        #print("self grid ",self.grid[r][c])
                         self.grid[r][c] = 3
-                        print("self grid : ", self.grid[r][c])
+                        #print("self grid : ", self.grid[r][c])
                 elif nei == 3:
-                    print("self grid in nei",self.grid[r][c])
+                    #print("self grid in nei",self.grid[r][c])
                     self.grid[r][c] = 2
-                    print("self grid : ",self.grid[r][c])
+                    #print("self grid : ",self.grid[r][c])
 
         #print(self.grid)
         for r in range(self.n_rows):
@@ -120,10 +120,11 @@ class Game():
             for c in range(self.n_cols):
 
                 if self.grid[r][c] == 1:
-                    print("cell dead", self.grid[r][c], r, c)
                     self.grid[r][c] = 0
-                    print("cell dead", self.grid[r][c])
+
                 elif self.grid[r][c] in [2,3]:
                     self.grid[r][c] = 1
-        print(self.grid)
+
+                #print("cell still dead ?", self.grid[r][c], r, c)
+        #print(self.grid)
         time.sleep(0.4)
