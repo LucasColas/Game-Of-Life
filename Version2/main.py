@@ -20,6 +20,7 @@ def main():
     n_cols = ''
     n_cols_entered = False
     created = False
+    started = False
 
     while run:
         #print(nb)
