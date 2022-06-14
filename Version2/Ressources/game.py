@@ -82,7 +82,9 @@ class Game():
                     Rect = pygame.Rect(col*self.col, row*self.row, self.row, self.col)
                     pygame.draw.rect(self.display_surface, Black, Rect)
 
-
+    def draw_pattern(self):
+        pass
+        
     def update_grid(self):
         #print("in update")
         def countNeighbors(r,c):
