@@ -82,8 +82,9 @@ class Game():
                     Rect = pygame.Rect(col*self.col, row*self.row, self.row, self.col)
                     pygame.draw.rect(self.display_surface, Black, Rect)
 
-    def draw_pattern(self):
-        #Tech With Tim's video : A* (45:47)
+    def draw_pattern(self, i,j):
+        self.grid[i][j] = 1
+
 
     def update_grid(self):
         #print("in update")

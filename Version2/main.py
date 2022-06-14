@@ -10,6 +10,9 @@ input_rect = pygame.Rect((Width//2)-75, (Height//2)-16, 140, 32)
 font = pygame.font.Font(None, 32)
 clock = pygame.time.Clock()
 
+def get_clicked_pos(pos, Width, Height, n_row, n_cols):
+    pass
+
 def main():
 
     run = True
@@ -88,8 +91,16 @@ def main():
                     run = False
                     quit()
 
-            new_Game.draw_grid()
-            new_Game.update_grid()
+                if started:
+                    continue
+
+                if pygame.mouse.get_pressed()[0]:
+                    pos = pygame.mouse.get_pos()
+                    row, col = get_clicked_pos(pos, )
+
+
+                new_Game.draw_grid()
+                new_Game.update_grid()
 
 
         pygame.display.update()
