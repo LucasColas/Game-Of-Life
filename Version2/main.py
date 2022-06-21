@@ -10,8 +10,12 @@ input_rect = pygame.Rect((Width//2)-75, (Height//2)-16, 140, 32)
 font = pygame.font.Font(None, 32)
 clock = pygame.time.Clock()
 
-def get_clicked_pos(pos, Width, Height, n_row, n_cols):
-    pass
+def get_clicked_pos(pos, Width, Height, n_rows, n_cols):
+    gap_Height = Height//n_rows
+    gap_Width = Width//n_cols
+    row = pos[1]//gap_Height
+    col = pos[0]//gap_Width
+    return row, col
 
 def main():
 
@@ -97,7 +101,7 @@ def main():
                 if pygame.mouse.get_pressed()[0]:
                     pos = pygame.mouse.get_pos()
                     row, col = get_clicked_pos(pos, Width, Height, int(n_rows),int(n_cols))
-
+                    new_Game.
 
                 new_Game.draw_grid()
                 new_Game.update_grid()
