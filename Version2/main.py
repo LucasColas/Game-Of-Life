@@ -96,7 +96,7 @@ def main():
 
                 if pygame.mouse.get_pressed()[0]:
                     pos = pygame.mouse.get_pos()
-                    row, col = get_clicked_pos(pos, )
+                    row, col = get_clicked_pos(pos, Width, Height, int(n_rows),int(n_cols))
 
 
                 new_Game.draw_grid()
