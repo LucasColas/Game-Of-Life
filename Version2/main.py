@@ -16,6 +16,7 @@ def get_clicked_pos(pos, Width, Height, n_rows, n_cols):
     gap_Height = Height//n_rows
     row = pos[1]//gap_Height
     col = pos[0]//gap_Width
+    print(row, col)
     return row, col
 
 def main():

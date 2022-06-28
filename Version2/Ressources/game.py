@@ -32,7 +32,7 @@ class Game():
 
 
     def create_grid(self, n_rows, n_cols):
-        return [[0 for i in range(n_rows)] for j in range(n_cols)]
+        return [[0 for i in range(n_cols)] for j in range(n_rows)]
     def default_grid(self):
         """
         self.grid[30][30] = 1
