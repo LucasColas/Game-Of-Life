@@ -103,6 +103,7 @@ def main():
                     row, col = get_clicked_pos(pos, Width, Height, int(n_rows),int(n_cols))
                     new_Game.grid[row][col] = 1 if new_Game.grid[row][col] == 0 else 0
 
+                if event.type == pygame.KEYDOWN:
                 new_Game.draw_grid()
                 new_Game.update_grid()
 
