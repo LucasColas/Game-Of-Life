@@ -104,7 +104,11 @@ def main():
                     new_Game.grid[row][col] = 1 if new_Game.grid[row][col] == 0 else 0
 
                 if event.type == pygame.KEYDOWN:
+                    if event.key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+                        started = True
+
                     
+
                 new_Game.draw_grid()
                 new_Game.update_grid()
 
