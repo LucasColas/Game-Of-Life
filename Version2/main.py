@@ -111,6 +111,7 @@ def main():
                     if event.key in (pygame.K_RETURN, pygame.K_KP_ENTER):
                         started = True
                         print("started")
+            
             new_Game.draw_grid()
 
 
