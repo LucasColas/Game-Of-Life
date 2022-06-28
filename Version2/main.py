@@ -11,11 +11,12 @@ font = pygame.font.Font(None, 32)
 clock = pygame.time.Clock()
 
 def get_clicked_pos(pos, Width, Height, n_rows, n_cols):
-    gap_Width = pos[0]//n_cols
-    gap_Height = pos[1]//n_rows
+
+    gap_Width = Width//n_cols
+    gap_Height = Height//n_rows
     row = pos[1]//gap_Height
     col = pos[0]//gap_Width
-    return col, row
+    return row, col
 
 def main():
 
