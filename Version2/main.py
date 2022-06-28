@@ -96,7 +96,7 @@ def main():
                     quit()
 
                 if started:
-                    new_Game.update_grid()
+                    #new_Game.update_grid()
                     new_Game.draw_grid()
                     continue
 
@@ -108,7 +108,7 @@ def main():
                 if event.type == pygame.KEYDOWN:
                     if event.key in (pygame.K_RETURN, pygame.K_KP_ENTER):
                         started = True
-                new_Game.draw_grid()
+            new_Game.draw_grid()
 
 
 
