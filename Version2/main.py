@@ -104,6 +104,7 @@ def main():
                     new_Game.grid[row][col] = 1 if new_Game.grid[row][col] == 0 else 0
 
                 if event.type == pygame.KEYDOWN:
+                    
                 new_Game.draw_grid()
                 new_Game.update_grid()
 
