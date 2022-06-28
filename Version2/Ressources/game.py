@@ -47,7 +47,7 @@ class Game():
         self.grid[32][35] = 1
         self.grid[32][37] = 1
 
-        """
+
         self.grid[41][40] = 1
 
 
@@ -67,6 +67,9 @@ class Game():
         self.grid[33][9] = 1
         self.grid[33][11] = 1
         self.grid[34][10] = 1
+
+        """
+        pass
 
     def draw_grid(self):
         self.display_surface.fill(White)

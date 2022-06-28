@@ -9,7 +9,7 @@ n_cols = 50
 
 grid = [[0 for i in range(n_rows)] for j in range(n_cols)]
 
-
+"""
 grid[41][40] = 1
 
 
@@ -29,3 +29,5 @@ grid[33][10] = 1
 grid[33][9] = 1
 grid[33][11] = 1
 grid[34][10] = 1
+
+"""
