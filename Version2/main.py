@@ -56,7 +56,7 @@ def main():
             #nb = int(nb)
             pygame.draw.rect(Win, (0,250,0), input_rect, 2)
             text = font.render(n_rows, True, (Black))
-            text2 = font.render("n_rows : ", True, (Black))
+            text2 = font.render("rows : ", True, (Black))
             Win.blit(text2, (input_rect.x, input_rect.y - (font.size("n_rows : ")[1] + 7)))
             Win.blit(text, (input_rect.x + 5, input_rect.y+5))
 
@@ -82,7 +82,7 @@ def main():
             #nb = int(nb)
             pygame.draw.rect(Win, (0,250,0), input_rect, 2)
             text = font.render(n_cols, True, (Black))
-            text2 = font.render("n_cols : ", True, (Black))
+            text2 = font.render("cols : ", True, (Black))
             Win.blit(text2, (input_rect.x, input_rect.y - (font.size("n_cols : ")[1] + 7)))
             Win.blit(text, (input_rect.x + 5, input_rect.y+5))
 
@@ -98,18 +98,19 @@ def main():
                     quit()
 
                 if started:
-                    #new_Game.update_grid()
-                    new_Game.draw_grid()
+                    new_Game.update_grid()
+                    #new_Game.draw_grid()
                     continue
 
                 if pygame.mouse.get_pressed()[0]:
                     pos = pygame.mouse.get_pos()
-                    row, col = get_clicked_pos(pos, Width, Height, int(n_rows),int(n_cols))
+                    row, col = pos[1]//new_Game.row, pos[0]//new_Game.col
                     new_Game.grid[row][col] = 1 if new_Game.grid[row][col] == 0 else 0
 
                 if event.type == pygame.KEYDOWN:
                     if event.key in (pygame.K_RETURN, pygame.K_KP_ENTER):
                         started = True
+                        print("started")
             new_Game.draw_grid()
 
 
